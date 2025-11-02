@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import io from "socket.io-client";
 
-const socket = io("http://localhost:4000");
+const const PORT = process.env.PORT || 4000;
+server.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}`);
+});socket = io("https://taboogame-14.onrender.com/");
 
 // Example taboo words for each card
 const TABOO_WORDS = {
