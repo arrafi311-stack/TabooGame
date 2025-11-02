@@ -78,7 +78,8 @@ function generateTabooBoard() {
 
 const generateBoard = () => {
   // 5x5 grid, 25 words
-  const shuffled = [...WORDS].sort(() => Math.random() - 0.5).slice(0, 25);
+  const allWords = [...WORDS.easy, ...WORDS.medium, ...WORDS.hard, ...WORDS.insane];
+  const shuffled = allWords.sort(() => Math.random() - 0.5).slice(0, 25);
   // Assign teams: 9 red, 8 blue, 7 neutral, 1 assassin
   const types = Array(9).fill('red').concat(Array(8).fill('blue')).concat(Array(7).fill('neutral')).concat(['assassin']);
   const shuffledTypes = types.sort(() => Math.random() - 0.5);
